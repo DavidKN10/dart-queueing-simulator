@@ -1,4 +1,4 @@
-# CS 442 MP1: Queueing Simulator
+# Queueing Simulator
 
 ## 1. Overview
 

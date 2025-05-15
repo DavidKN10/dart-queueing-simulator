@@ -2,8 +2,8 @@
 
 ## Team
 
-- Name(s): David Rivera-Chino
-- AID(s): A20510250
+- Name(s): 
+- AID(s): 
 
 ## Self-Evaluation Checklist
 
