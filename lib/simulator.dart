@@ -37,7 +37,7 @@ class Simulator {
     _processedEvents.clear();
 
     while(eventQueue.isNotEmpty) {
-      final Event event = eventQueue.removeAt(0);
+      final Event event = eventQueue[0];
 
       // calculate start time and waiting time
       final int startTime = _currentTime > event.arrivalTime ? _currentTime : event.arrivalTime;
@@ -59,6 +59,8 @@ class Simulator {
         "| Actual: ${processedEvent.startTime}-${processedEvent.endTime} "
         "| Wait: ${processedEvent.waitTime}\n");
       }
+
+      eventQueue.removeAt(0);
     }
   }
 
@@ -97,7 +99,7 @@ class Simulator {
     print("# Summary statistics\n");
     final totalEvents = _processedEvents.length;
     final totalWait = _processedEvents.fold(0, (sum, event) => sum + event.waitTime);
-    final avgWaitTotal = totalEvents > 0 ? totalWait / totalEvents : 0;
+    final avgWaitTotal =  totalWait / totalEvents;
 
     print("Total num events: ${totalEvents}");
     print("Total wait time: ${totalWait}");

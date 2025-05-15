@@ -68,7 +68,7 @@ class StochasticProcess extends Process {
     final List<Event> events = <Event>[];
 
     // loop until we reach end
-    while (time <= end) {
+    while (time < end) {
       // calculate the distributions for duration and then add to the event list
       final duration = durationDist.next().ceil();
       events.add(Event(name, time, duration));
@@ -101,8 +101,6 @@ class ProcessStatistics {
   int totalWaitTime = 0;
 
   ProcessStatistics(this.processName);
-
-  double get averageWaitTime => totalWaitTime / eventCount;
 }
 
 /// An event that occurs once at a fixed time.
